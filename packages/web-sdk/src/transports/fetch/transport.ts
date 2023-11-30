@@ -40,6 +40,10 @@ export class FetchTransport extends BaseTransport {
         return Promise.resolve();
       }
 
+      for (const item of items) {
+        this.markItemAsSent(item);
+      }
+
       await this.promiseBuffer.add(() => {
         const body = JSON.stringify(getTransportBody(items));
 

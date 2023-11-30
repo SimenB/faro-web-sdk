@@ -293,7 +293,7 @@ import { initializeFaro, BaseTransport, TransportItem } from '@grafana/faro-core
 
 class MyTransport extends BaseTransport {
   send(item: TransportItem) {
-    // do something with paylaod
+    // do something with payload
   }
 }
 

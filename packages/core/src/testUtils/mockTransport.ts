@@ -14,6 +14,10 @@ export class MockTransport extends BaseTransport implements Transport {
   }
 
   send(items: TransportItem[]): void | Promise<void> {
+    for (const item of items) {
+      this.markItemAsSent(item);
+    }
+
     this.items.push(...items);
   }
 

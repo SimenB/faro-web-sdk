@@ -18,6 +18,8 @@ class MockSingleTransport extends BaseTransport implements Transport {
   sentItems: TransportItem[] = [];
 
   send(item: TransportItem): void | Promise<void> {
+    this.markItemAsSent(item);
+
     this.sentItems.push(item);
   }
 }
@@ -31,6 +33,10 @@ class MockTransport extends BaseTransport implements Transport {
   sentItems: TransportItem[] = [];
 
   send(items: TransportItem[]): void | Promise<void> {
+    for (const item of items) {
+      this.markItemAsSent(item);
+    }
+
     this.sentItems.push(...items);
   }
 

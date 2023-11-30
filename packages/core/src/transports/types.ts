@@ -21,7 +21,7 @@ export interface Transport extends Extension {
 
   // returns URLs to be ignored by tracing, to not cause a feedback loop
   getIgnoreUrls(): Patterns;
-  // returns wether the transport supports processing of a batches of items
+  // returns whether the transport supports processing of a batches of items
   isBatched(): boolean;
 }
 
